@@ -1,0 +1,183 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.landingContainer {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  color: #333;
+  padding-top: 80px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: #ffffff;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00a33d;
+}
+
+.nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #00a33d;
+}
+
+
+.hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  height: 480px;
+
+  background:
+    linear-gradient(rgba(0, 128, 0, 0.55), rgba(0, 128, 0, 0.55)),
+    url("../assets/hero-back.avif") center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.getStartedBtn {
+  padding: 12px 28px;
+  border: none;
+  background: white;
+  color: #00a33d;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.getStartedBtn:hover {
+  background: #e7e7e7;
+}
+
+/* BENEFITS */
+.benefits {
+  width: 100%;
+  padding: 70px 80px;
+  background: white;
+}
+
+.benefitsGrid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.benefitCard,
+.howCard {
+  padding: 30px;
+  min-height: 220px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.benefitCard:hover,
+.howCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.benefitCard h3,
+.howCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #009036;
+}
+
+.benefitCard p,
+.howCard p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.howItWorks {
+  width: 100%;
+  padding: 70px 80px;
+  background: #fff;
+}
+
+.howGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  padding: 0 80px;
+}
+
+
+.footer {
+  width: 100%;
+  padding: 40px 20px;
+  background: #00a33d;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footerText {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.footerContact p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+.benefits h2,
+.howItWorks h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
