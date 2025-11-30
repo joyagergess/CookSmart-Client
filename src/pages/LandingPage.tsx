@@ -1,6 +1,8 @@
 import styles from "../styles/LandingPage.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
+     const navigate = useNavigate();
   return (
     <div className={styles.landingContainer}>
 
@@ -19,7 +21,7 @@ export default function LandingPage() {
         <div className={styles.heroContent}>
           <h1>Welcome to CookSmart</h1>
           <p>Your platform to Shop, Save, Cook & Live Better!</p>
-          <button className={styles.getStartedBtn}>Get started</button>
+          <button className={styles.getStartedBtn} onClick={() => navigate("/Login")}>Get started</button>
         </div>
       </section>
 
