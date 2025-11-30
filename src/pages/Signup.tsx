@@ -10,7 +10,6 @@ export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [error, setError] = useState("");
 
   async function handleSignup() {
@@ -43,7 +42,7 @@ export default function Signup() {
       return;
     }
 
-    navigate("/dashboard");
+    navigate("/JoinHouseHold");
   }
 
   return (
@@ -54,19 +53,34 @@ export default function Signup() {
         {error && <p className={styles.error}>{error}</p>}
 
         <label>Name</label>
-        <input value={name} onChange={(e) => setName(e.target.value)} />
+        <input
+          placeholder="Enter your full name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
         <label>Email</label>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
         <label>Password</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="password"
+          placeholder="Create a password (min 6 characters)"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
         <button className={styles.btn} onClick={handleSignup} disabled={loading}>
           {loading ? "Creating..." : "Sign Up"}
         </button>
 
-        <Link to="/login" className={styles.switch}>Already have an account? Login</Link>
+        <Link to="/login" className={styles.switch}>
+          Already have an account? Login
+        </Link>
       </div>
     </div>
   );

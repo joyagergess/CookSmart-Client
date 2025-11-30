@@ -31,7 +31,7 @@ export default function Login() {
       return;
     }
 
-    navigate("/dashboard");
+    navigate("/JoinHouseHold");
   }
 
   return (
@@ -42,16 +42,27 @@ export default function Login() {
         {error && <p className={styles.error}>{error}</p>}
 
         <label>Email</label>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
         <label>Password</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
         <button className={styles.btn} onClick={handleLogin} disabled={loading}>
           {loading ? "Loading..." : "Login"}
         </button>
 
-        <Link to="/signup" className={styles.switch}>No account? Signup</Link>
+        <Link to="/signup" className={styles.switch}>
+          No account? Signup
+        </Link>
       </div>
     </div>
   );
