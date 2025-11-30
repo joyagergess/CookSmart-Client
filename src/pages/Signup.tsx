@@ -1,29 +1,72 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import styles from "../styles/Auth.module.css";
 
 export default function Signup() {
+  const navigate = useNavigate();
+  const { register, loading } = useAuth();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [error, setError] = useState("");
+
+  async function handleSignup() {
+    if (!name || !email || !password) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    if (name.length < 3) {
+      setError("Name must be at least 3 characters.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Enter a valid email address.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters.");
+      return;
+    }
+
+    setError("");
+
+    const ok = await register(name, email, password);
+
+    if (!ok) {
+      setError("Email already exists or invalid data.");
+      return;
+    }
+
+    navigate("/dashboard");
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h2>Create an Account</h2>
+        <h2>Create Account</h2>
+
+        {error && <p className={styles.error}>{error}</p>}
 
         <label>Name</label>
-        <input type="text" placeholder="Enter your name" />
+        <input value={name} onChange={(e) => setName(e.target.value)} />
 
         <label>Email</label>
-        <input type="email" placeholder="eg. user@gmail.com" />
+        <input value={email} onChange={(e) => setEmail(e.target.value)} />
 
         <label>Password</label>
-        <input type="password" placeholder="Create a password" />
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-        <label>Confirm Password</label>
-        <input type="password" placeholder="Re-enter your password" />
+        <button className={styles.btn} onClick={handleSignup} disabled={loading}>
+          {loading ? "Creating..." : "Sign Up"}
+        </button>
 
-        <button className={styles.btn}>Sign Up</button>
-
-        <Link to="/login" className={styles.switch}>
-          Already have an account? Login
-        </Link>
+        <Link to="/login" className={styles.switch}>Already have an account? Login</Link>
       </div>
     </div>
   );
