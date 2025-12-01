@@ -41,7 +41,7 @@ export default function Sidebar() {
     </Link>
   </li>
   <li>
-    <Link to="/shopping-list">
+    <Link to="/shoppingList">
       <span className={styles.icon}>🛒</span> Shopping List
     </Link>
   </li>

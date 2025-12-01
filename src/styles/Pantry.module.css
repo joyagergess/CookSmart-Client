@@ -79,6 +79,7 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid #ededed;
+  max-width: 70%;
 }
 
 .itemName {
