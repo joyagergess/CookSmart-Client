@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fb;
+}
+
+.main {
+  flex: 1;
+  padding: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 24px;
+}
+
+.loading {
+  padding: 40px;
+  font-size: 20px;
+}
+
+.error {
+  padding: 40px;
+  color: red;
+}

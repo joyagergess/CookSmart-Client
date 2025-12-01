@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Pantry from "./pages/Pantry";
 import Recipe from "./pages/Recipe";
+import MealPlanPage from "./pages/MealPLanPage";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/JoinHousehold" element={<ProtectedRoute><JoinHousehold /></ProtectedRoute>} />
         <Route path="/pantry" element={<ProtectedRoute><Pantry /></ProtectedRoute>} />
         <Route path="/recipes" element={<ProtectedRoute><Recipe /></ProtectedRoute>} />
+        <Route path="/meal" element={<ProtectedRoute><MealPlanPage/></ProtectedRoute>} />
 
       </Routes>
   );

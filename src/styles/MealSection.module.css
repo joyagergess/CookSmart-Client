@@ -1,0 +1,65 @@
+.section {
+  margin-bottom: 32px;
+  max-width: 500px;       /* NEW */
+}
+
+.header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2e2e2;
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.itemText {
+  font-size: 15px;
+  color: #222;
+}
+
+.deleteBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #d9534f;
+}
+
+.deleteBtn:hover {
+  color: #b12825;
+}
+
+.addBtn {
+  width: 30%;
+  margin-top: 12px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background: #ddffdd;
+  border: 1px solid #adebad;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.addBtn:hover {
+  background: #c9f7c7;
+}

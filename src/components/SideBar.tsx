@@ -36,7 +36,7 @@ export default function Sidebar() {
     </Link>
   </li>
   <li>
-    <Link to="/meal-plan">
+    <Link to="/meal">
       <span className={styles.icon}>🥗</span> Meal Plan
     </Link>
   </li>
