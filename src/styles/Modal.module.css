@@ -49,3 +49,115 @@
   border: none;
   border-radius: 6px;
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  z-index: 50;
+}
+
+.modalLarge {
+  width: 600px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modalLarge h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #2e2e2e;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4a4a;
+  display: block;
+  margin: 18px 0 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: none;
+  background: #fafafa;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #4c922d;
+  background: #fff;
+}
+
+.ingredientRow {
+  display: grid;
+  grid-template-columns: 1fr 100px 70px;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.addSmall {
+  background: #4c922d;
+  color: white;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px 0 15px;
+  font-size: 14px;
+}
+
+.addSmall:hover {
+  background: #3b741c;
+}
+
+.saveBtn {
+  width: 100%;
+  background: #4c922d;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.saveBtn:hover {
+  background: #3a741c;
+}
+
+.cancelBtn {
+  width: 100%;
+  background: #e4e4e4;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancelBtn:hover {
+  background: #d1d1d1;
+}
