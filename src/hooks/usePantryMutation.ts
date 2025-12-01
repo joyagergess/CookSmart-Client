@@ -18,7 +18,7 @@ export function usePantryMutations() {
     },
   });
 
-  // -1
+
   const decrease = useMutation({
     mutationFn: async (id: number) => {
       return api.post("/pantry/decrease", { id, amount: 1 });
