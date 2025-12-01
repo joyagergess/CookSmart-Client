@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../styles/Auth.module.css";
 import api from "../api/axios";
+import { useHousehold } from "../context/HouseHoldContext";
 
 export default function CreateHousehold() {
+  const { setHouseholdId } = useHousehold(); 
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -24,11 +26,26 @@ export default function CreateHousehold() {
         invite_code: invite || null,
       });
 
-      console.log("Household created:", res.data);
+      const payload = res.data.payload;
 
-        navigate("/dashboard");
+      if (payload?.error) {
+        setError(payload.error);
+        return;
+      }
+
+      const createdHouseholdId = payload?.id;
+
+      if (!createdHouseholdId) {
+        setError("Could not determine household ID after creation.");
+        return;
+      }
+
+      setHouseholdId(createdHouseholdId);
+
+      navigate("/Pantry");
 
     } catch (err) {
+      console.error(err);
       setError("Failed to create household.");
     }
   }

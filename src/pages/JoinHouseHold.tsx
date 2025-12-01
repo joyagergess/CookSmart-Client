@@ -2,35 +2,48 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../styles/Auth.module.css";
 import api from "../api/axios";
+import { useHousehold } from "../context/HouseHoldContext";
 
 export default function JoinHousehold() {
-  const navigate=useNavigate();
-  const [invite, setInvite] = useState("");
-  const [name, setName] = useState("");
-  const [error, setError] = useState("");
+  const { setHouseholdId } = useHousehold();
+  const navigate = useNavigate();
 
-  async function handleJoin() {
-    if (!invite.trim()) {
-      setError("Invite code is required.");
+  const [invite, setInvite] = useState("");
+  const [error, setError] = useState("");
+async function handleJoin() {
+  if (!invite.trim()) {
+    setError("Invite code is required.");
+    return;
+  }
+
+  setError("");
+
+  try {
+    const res = await api.post("/household_members/join", { invite_code: invite });
+    const payload = res.data.payload;
+
+    if (payload.error) {
+      setError(payload.error);
       return;
     }
 
-    setError("");
+    const joinedHouseholdId = payload.payload?.household_id;
 
-    try {
-      const res = await api.post("/household_members/join", {
-        name,
-        invite_code: invite,
-      });
-
-      console.log("Joined household:", res.data);
-        navigate("/dashboard");
-
-      setError("Joined successfully")
-     } catch (err) {
-      setError("Invalid invite code or unable to join.");
+    if (!joinedHouseholdId) {
+      setError("Could not determine joined household ID.");
+      return;
     }
+
+    setHouseholdId(joinedHouseholdId);
+
+    navigate("/Pantry");
+
+  } catch (err) {
+    console.error(err);
+    setError("Invalid invite code or unable to join.");
   }
+}
+
 
   return (
     <div className={styles.container}>
@@ -38,13 +51,6 @@ export default function JoinHousehold() {
         <h2>Join Household</h2>
 
         {error && <p className={styles.error}>{error}</p>}
-
-        <label>Name</label>
-        <input
-          placeholder="eg. Joya"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
 
         <label>Invite code</label>
         <input

@@ -1,0 +1,51 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.addBtn {
+  background: #4CAF50;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+}
+
+.cancelBtn {
+  background: #aaa;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+}

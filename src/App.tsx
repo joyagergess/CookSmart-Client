@@ -6,6 +6,7 @@ import CreateHousehold from "./pages/CreateHouseHold";
 import JoinHousehold from "./pages/JoinHouseHold";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import Pantry from "./pages/Pantry";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/Createhousehold" element={<ProtectedRoute><CreateHousehold /></ProtectedRoute>} />
         <Route path="/JoinHousehold" element={<ProtectedRoute><JoinHousehold /></ProtectedRoute>} />
+        <Route path="/pantry" element={<ProtectedRoute><Pantry /></ProtectedRoute>} />
 
       </Routes>
   );

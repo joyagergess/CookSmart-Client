@@ -1,0 +1,131 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  padding: 30px 40px;
+  background: #f7f7f7;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.search {
+  padding: 7px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.addBtn {
+  padding: 7px 14px;
+  border: none;
+  background: #75b043;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filters {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.filter,
+.filterActive {
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.filter {
+  background: #eee;
+}
+
+.filterActive {
+  background: #d8f5c9;
+  border: 1px solid #7ebd55;
+}
+
+.list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ededed;
+}
+
+.itemName {
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.circleBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.quantity {
+  font-size: 14px;
+}
+
+.expiry {
+  font-size: 13px;
+  background: #f1f1f1;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.loading,
+.error {
+  padding: 30px;
+  font-size: 18px;
+}
+.deleteBtn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: #d9534f;
+}
+
+.deleteBtn:hover {
+  color: #c9302c;
+}
