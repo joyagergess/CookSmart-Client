@@ -11,6 +11,7 @@ import MealPlanPage from "./pages/MealPLanPage";
 import ShoppingListPage from "./pages/ShoppingListPage";
 import ExpensesPage from "./pages/ExpensesPage";
 import AIAssistant from "./pages/AIAssistant";
+import Settings from "./pages/Settings";
 
 export default function App() {
   return (
@@ -28,6 +29,8 @@ export default function App() {
         <Route path="/shoppingList" element={<ProtectedRoute><ShoppingListPage/></ProtectedRoute>} />
         <Route path="/expenses" element={<ProtectedRoute><ExpensesPage/></ProtectedRoute>} />
         <Route path="/AI" element={<ProtectedRoute><AIAssistant/></ProtectedRoute>} />
+        <Route path="/settings" element={<ProtectedRoute><Settings/></ProtectedRoute>} />
+
 
 
       </Routes>
