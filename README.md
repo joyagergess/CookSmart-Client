@@ -4,13 +4,19 @@ This repository contains the React (TypeScript) frontend for the project.
 🚀 Tech Stack
 
 React + TypeScript 
+
 Vite
+
 React Query
+
 React Router
+
 CSS Modules
+
 Axios (API requests)
+
 JWT Auth (via backend)
-JWT Auth (via backend)
+
 
 🚀 Features
 🔐 Auth pages (login, signup)
