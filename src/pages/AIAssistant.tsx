@@ -1,7 +1,20 @@
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/SideBar";
+import { useGenerateRecipe } from "../hooks/useGenerateRecipe";
+import { useState } from "react";
 import styles from "../styles/AIAssistant.module.css";
+import AiModal from "../components/AiModal";
+import ReactMarkdown from "react-markdown";
+
 
 export default function AIAssistant() {
+  const recipeQuery = useGenerateRecipe();
+  const [openModal, setOpenModal] = useState(false);
+
+  async function generateRecipe() {
+    const result = await recipeQuery.refetch();
+    if (result.data) setOpenModal(true);
+  }
+
   return (
     <div className={styles.layout}>
       <Sidebar />
@@ -16,28 +29,29 @@ export default function AIAssistant() {
           <div className={styles.card}>
             <h3>Cook from my pantry</h3>
             <p>Get recipe ideas using only what you already have at home</p>
-            <button>Generate recipes</button>
-          </div>
 
-          <div className={styles.card}>
-            <h3>Smart substitutions</h3>
-            <p>Missing an ingredient? get instant alternatives</p>
-            <button>Generate missing ingredients</button>
-          </div>
-
-          <div className={styles.card}>
-            <h3>Weekly summary</h3>
-            <p>See how you performed this week: spending, waste & planning</p>
-            <button>Generate summary</button>
-          </div>
-
-          <div className={styles.card}>
-            <h3>AI meal plans</h3>
-            <p>Let AI create a full week of meal plans using your pantry & preferences</p>
-            <button>Generate plan</button>
+            <button onClick={generateRecipe}>
+              {recipeQuery.isFetching ? "Generating..." : "Generate recipes"}
+            </button>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
+
+     
+        <AiModal isOpen={openModal} onClose={() => setOpenModal(false)}>
+        <h2>Generated Recipe</h2>
+      
+        {recipeQuery.isLoading && <p>Loading...</p>}
+      
+        {recipeQuery.data && (
+          <div className={styles.markdown}>
+            <ReactMarkdown>
+              {recipeQuery.data}
+            </ReactMarkdown>
+          </div>
+        )}
+       </AiModal>
+      
+            </div>
+        </div>
+          );
+        }

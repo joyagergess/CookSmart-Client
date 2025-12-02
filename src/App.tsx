@@ -10,7 +10,7 @@ import Recipe from "./pages/Recipe";
 import MealPlanPage from "./pages/MealPLanPage";
 import ShoppingListPage from "./pages/ShoppingListPage";
 import ExpensesPage from "./pages/ExpensesPage";
-import AIAssistant from "./pages/AiAssistant";
+import AIAssistant from "./pages/AIAssistant";
 
 export default function App() {
   return (
