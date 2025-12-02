@@ -47,6 +47,13 @@
   background: rgba(255, 255, 255, 0.18);
   transform: translateX(4px);
 }
+.icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 22px;
+  font-weight: 300;
+  color: white;
+  margin-right: 8px;
+}
 
 .logoutBtn {
   background: rgba(255, 255, 255, 0.9);

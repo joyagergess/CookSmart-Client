@@ -3,6 +3,7 @@ import styles from "../styles/Sidebar.module.css";
 import { useAuth } from "../context/AuthContext";
 import { useHouseholdInfo } from "../hooks/useHouseholdInfo";
 
+
 export default function Sidebar() {
   const navigate = useNavigate();
   const { logout } = useAuth();
@@ -24,40 +25,46 @@ export default function Sidebar() {
         </p>
       )}
 
-     <ul className={styles.menu}>
+    <ul className={styles.menu}>
   <li>
     <Link to="/pantry">
-      <span className={styles.icon}>📦</span> Pantry
+      <span className={styles.icon}>inventory_2</span> Pantry
     </Link>
   </li>
+
   <li>
     <Link to="/recipes">
-      <span className={styles.icon}>📘</span> Recipes
+      <span className={styles.icon}>menu_book</span> Recipes
     </Link>
   </li>
+
   <li>
     <Link to="/meal">
-      <span className={styles.icon}>🥗</span> Meal Plan
+      <span className={styles.icon}>restaurant</span> Meal Plan
     </Link>
   </li>
+
   <li>
     <Link to="/shoppingList">
-      <span className={styles.icon}>🛒</span> Shopping List
+      <span className={styles.icon}>shopping_cart</span> Shopping List
     </Link>
   </li>
+
   <li>
     <Link to="/expenses">
-      <span className={styles.icon}>💲</span> Expenses
+      <span className={styles.icon}>payments</span> Expenses
     </Link>
   </li>
+
   <li>
-    <Link to="/ai">
-      <span className={styles.icon}>✨</span> AI Assistant
+    <Link to="/AI">
+      <span className={styles.icon}>auto_awesome</span> AI Assistant
     </Link>
   </li>
+
   <li>
     <Link to="/settings">
-      <span className={styles.icon}>⚙</span> Settings
+      <span className={styles.icon}>settings</span> Settings
     </Link>
   </li>
 </ul>

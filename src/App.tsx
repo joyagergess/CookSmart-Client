@@ -4,13 +4,13 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import CreateHousehold from "./pages/CreateHouseHold";
 import JoinHousehold from "./pages/JoinHouseHold";
-import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Pantry from "./pages/Pantry";
 import Recipe from "./pages/Recipe";
 import MealPlanPage from "./pages/MealPLanPage";
 import ShoppingListPage from "./pages/ShoppingListPage";
 import ExpensesPage from "./pages/ExpensesPage";
+import AIAssistant from "./pages/AiAssistant";
 
 export default function App() {
   return (
@@ -20,7 +20,6 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/Createhousehold" element={<ProtectedRoute><CreateHousehold /></ProtectedRoute>} />
         <Route path="/JoinHousehold" element={<ProtectedRoute><JoinHousehold /></ProtectedRoute>} />
         <Route path="/pantry" element={<ProtectedRoute><Pantry /></ProtectedRoute>} />
@@ -28,6 +27,7 @@ export default function App() {
         <Route path="/meal" element={<ProtectedRoute><MealPlanPage/></ProtectedRoute>} />
         <Route path="/shoppingList" element={<ProtectedRoute><ShoppingListPage/></ProtectedRoute>} />
         <Route path="/expenses" element={<ProtectedRoute><ExpensesPage/></ProtectedRoute>} />
+        <Route path="/AI" element={<ProtectedRoute><AIAssistant/></ProtectedRoute>} />
 
 
       </Routes>

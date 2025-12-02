@@ -58,11 +58,11 @@ const [activeExpense, setActiveExpense] = useState<any | null>(null);
               <span className={styles.amount}>${expense.amount}</span>
 
               <button
-  className={styles.receiptBtn}
-onClick={() => setActiveExpense(expense)}
->
-  Receipt
-</button>
+                className={styles.receiptBtn}
+               onClick={() => setActiveExpense(expense)}
+                  >
+                Receipt
+               </button>
 
 
               <button
