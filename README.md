@@ -3,27 +3,22 @@ This repository contains the React (TypeScript) frontend for the project.
 
 🚀 Tech Stack
 
-React + TypeScript 
-
-Vite
-
-React Query
-
-React Router
-
-CSS Modules
-
-Axios (API requests)
-
+React + TypeScript ,
+Vite,
+React Query,
+React Router,
+CSS Modules,
+Axios (API requests),
 JWT Auth (via backend)
 
 
 🚀 Features
-🔐 Auth pages (login, signup)
-🏠 Household system (create / join households)
-📦 Pantry management (expiry reminders, badges)
-🍳 Recipe management
-📅 Weekly meal planner
-🛒 Shopping list
-💰 Expenses tracking
+
+🔐 Auth pages (login, signup),
+🏠 Household system (create / join households),
+📦 Pantry management (expiry reminders, badges),
+🍳 Recipe management,
+📅 Weekly meal planner,
+🛒 Shopping list,
+💰 Expenses tracking,
 🤖 AI Assistant page
