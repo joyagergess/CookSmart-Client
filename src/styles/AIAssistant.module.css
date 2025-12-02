@@ -64,3 +64,51 @@
 .card button:hover {
   background: #256628;
 }
+.markdown {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.markdown ul {
+  margin-left: 1.2rem;
+}
+
+.markdown li {
+  margin-bottom: 0.4rem;
+}
+
+.markdown strong {
+  font-weight: 600;
+}
+.dropdown {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0 15px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.subBtn {
+  background: #2e7d32;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.subBtn:hover {
+  background: #256628;
+}
