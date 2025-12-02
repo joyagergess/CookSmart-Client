@@ -112,3 +112,32 @@
 .subBtn:hover {
   background: #256628;
 }
+.jsonBox {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 14px;
+  overflow-x: auto;
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.nutritionBox {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.nutritionBox h3 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ingredientItem {
+  background: #ffffff;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}

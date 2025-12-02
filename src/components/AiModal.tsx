@@ -13,7 +13,7 @@ export default function AiModal({ isOpen, onClose, children }: AiModalProps) {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <button className={styles.closeBtn} onClick={onClose}>×</button>
+        <button className={styles.closeBtn} onClick={onClose}>x</button>
         <div className={styles.content}>
           {children}
         </div>
