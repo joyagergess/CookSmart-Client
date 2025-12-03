@@ -30,9 +30,12 @@
 
 .actions {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
 }
+
+
 
 .addBtn {
   background: #4CAF50;

@@ -17,7 +17,7 @@ export function HouseholdProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
 
 useEffect(() => {
-  const publicRoutes = ["/", "/login", "/signup", "/Createhousehold", "/JoinHousehold"];
+  const publicRoutes = ["/", "/login", "/signup", "/Createhousehold", ];
 
   if (publicRoutes.includes(location.pathname)) return;
 
