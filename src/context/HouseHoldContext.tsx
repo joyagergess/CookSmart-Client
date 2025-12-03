@@ -16,14 +16,16 @@ export function HouseholdProvider({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    if (location.pathname === "/JoinHousehold") return;
+useEffect(() => {
+  const publicRoutes = ["/", "/login", "/signup", "/Createhousehold", "/JoinHousehold"];
 
-    if (!householdId) {
-      navigate("/JoinHousehold", { replace: true });
-    }
+  if (publicRoutes.includes(location.pathname)) return;
 
-  }, [householdId, location.pathname]);
+  if (!householdId) {
+    navigate("/JoinHousehold", { replace: true });
+  }
+}, [householdId, location.pathname]);
+
 
   return (
     <HouseholdContext.Provider value={{ householdId, setHouseholdId, loading }}>

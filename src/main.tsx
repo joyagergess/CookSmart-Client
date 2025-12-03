@@ -8,20 +8,18 @@ import { HouseholdProvider } from "./context/HouseHoldContext";
 
 const client = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
-     <React.StrictMode>
+   <React.StrictMode>
    <BrowserRouter>
    <AuthProvider>
   <HouseholdProvider>
 
 
-   
     <QueryClientProvider client={client}>
 
        <App />
     </QueryClientProvider>
 
-    
-
+   
   </HouseholdProvider>
 
    </AuthProvider>

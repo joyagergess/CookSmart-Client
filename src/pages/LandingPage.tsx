@@ -66,8 +66,8 @@ export default function LandingPage() {
           </div>
 
           <div className={styles.howCard}>
-            <h3>GROCERY LISTS</h3>
-            <p>Generate smart shopping lists instantly based on your meal plan.</p>
+            <h3>AI SUBSTITUTIONS</h3>
+            <p>Missing an ingredient? Instantly get smart replacements based on what's already in your pantry.</p>
           </div>
         </div>
       </section>
