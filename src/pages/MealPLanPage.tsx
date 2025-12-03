@@ -36,8 +36,7 @@ export default function MealPlanPage() {
   const addEntry = useAddMealEntry();
   const removeEntry = useRemoveMealEntry();
 
-  if (planQuery.isLoading || entriesQuery.isLoading || recipesQuery.isLoading)
-    return   <div className={styles.loading}>Loading meal plan...</div>;
+ 
 
   const entries = entriesQuery.data || [];
   const recipes = recipesQuery.data || [];

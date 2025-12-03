@@ -18,7 +18,7 @@ export function MealSection({ title, entries, onAdd, onDelete }: Props) {
           <div className={styles.card} key={entry.id}>
             <span>{entry.recipe ? entry.recipe.title : "No recipe"}</span>
             <button className={styles.deleteBtn} onClick={() => onDelete(entry.id)}>
-              🗑
+             🗑️
             </button>
           </div>
         ))}

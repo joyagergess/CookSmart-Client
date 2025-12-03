@@ -30,8 +30,12 @@ export default function Login() {
       setError("Invalid email or password.");
       return;
     }
-
+   if (ok.user_type_id === 1) {
+      navigate("/admin");
+     return;
+    }else{
     navigate("/JoinHouseHold");
+    }
   }
 
   return (

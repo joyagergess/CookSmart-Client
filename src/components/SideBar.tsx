@@ -3,7 +3,6 @@ import styles from "../styles/Sidebar.module.css";
 import { useAuth } from "../context/AuthContext";
 import { useHouseholdInfo } from "../hooks/useHouseholdInfo";
 
-
 export default function Sidebar() {
   const navigate = useNavigate();
   const { logout } = useAuth();
@@ -25,49 +24,55 @@ export default function Sidebar() {
         </p>
       )}
 
-    <ul className={styles.menu}>
-  <li>
-    <Link to="/pantry">
-      <span className={styles.icon}>inventory_2</span> Pantry
-    </Link>
-  </li>
+      <ul className={styles.menu}>
+        <li>
+          <Link to="/pantry">
+            <span className={styles.icon}>inventory_2</span> Pantry
+          </Link>
+        </li>
 
-  <li>
-    <Link to="/recipes">
-      <span className={styles.icon}>menu_book</span> Recipes
-    </Link>
-  </li>
+        <li>
+          <Link to="/recipes">
+            <span className={styles.icon}>menu_book</span> Recipes
+          </Link>
+        </li>
 
-  <li>
-    <Link to="/meal">
-      <span className={styles.icon}>restaurant</span> Meal Plan
-    </Link>
-  </li>
+        <li>
+          <Link to="/meal">
+            <span className={styles.icon}>restaurant</span> Meal Plan
+          </Link>
+        </li>
 
-  <li>
-    <Link to="/shoppingList">
-      <span className={styles.icon}>shopping_cart</span> Shopping List
-    </Link>
-  </li>
+        <li>
+          <Link to="/shoppingList">
+            <span className={styles.icon}>shopping_cart</span> Shopping List
+          </Link>
+        </li>
 
-  <li>
-    <Link to="/expenses">
-      <span className={styles.icon}>payments</span> Expenses
-    </Link>
-  </li>
+        <li>
+          <Link to="/expenses">
+            <span className={styles.icon}>payments</span> Expenses
+          </Link>
+        </li>
 
-  <li>
-    <Link to="/AI">
-      <span className={styles.icon}>auto_awesome</span> AI Assistant
-    </Link>
-  </li>
+        <li>
+          <Link to="/AI">
+            <span className={styles.icon}>auto_awesome</span> AI Assistant
+          </Link>
+        </li>
 
-  <li>
-    <Link to="/settings">
-      <span className={styles.icon}>settings</span> Settings
-    </Link>
-  </li>
-</ul>
+        <li>
+          <Link to="/settings">
+            <span className={styles.icon}>settings</span> Settings
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/JoinHousehold">
+            <span className={styles.icon}>change_circle</span> Switch Household
+          </Link>
+        </li>
+      </ul>
 
       <button onClick={handleLogout} className={styles.logoutBtn}>Logout</button>
     </div>

@@ -12,6 +12,8 @@ import ShoppingListPage from "./pages/ShoppingListPage";
 import ExpensesPage from "./pages/ExpensesPage";
 import AIAssistant from "./pages/AIAssistant";
 import Settings from "./pages/Settings";
+import AdminPage from "./pages/AdminPage";
+import  AdminRoute from "./routes/AdminRoute";
 
 export default function App() {
   return (
@@ -30,6 +32,7 @@ export default function App() {
         <Route path="/expenses" element={<ProtectedRoute><ExpensesPage/></ProtectedRoute>} />
         <Route path="/AI" element={<ProtectedRoute><AIAssistant/></ProtectedRoute>} />
         <Route path="/settings" element={<ProtectedRoute><Settings/></ProtectedRoute>} />
+        <Route path="/admin" element={  <AdminRoute> <AdminPage />  </AdminRoute>} />
 
 
 

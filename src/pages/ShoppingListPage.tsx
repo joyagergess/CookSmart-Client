@@ -51,7 +51,7 @@ export default function ShoppingListPage() {
                 className={styles.deleteBtn}
                 onClick={() => deleteItem.mutate(item.id)}
               >
-                🗑
+               🗑️
               </button>
             </div>
           ))}

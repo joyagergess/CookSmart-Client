@@ -60,17 +60,16 @@ export function usePantryMutations() {
       });
     },
   });
+  
+const addItem = useMutation({
+  mutationFn: async (data: any) => {
+    return api.post(`/pantry/add_update/${data.id}`, data);
+  },
+  onSuccess: () => {
+    queryClient.invalidateQueries({ queryKey: ["pantry", householdId] });
+  },
+});
 
-  const addItem = useMutation({
-    mutationFn: async (data: any) => {
-      return api.post("/pantry/add_update", data);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: ["pantry", householdId],
-      });
-    },
-  });
 
 const deleteItem = useMutation({
   mutationFn: async (id: number) => {

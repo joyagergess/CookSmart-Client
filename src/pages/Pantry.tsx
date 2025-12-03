@@ -7,9 +7,13 @@ import { usePantryMutations } from "../hooks/usePantryMutation";
 import ExpiryTag from "../components/ExpiryTag";
 import styles from "../styles/Pantry.module.css";
 import AddIngredientModal from "../components/AddIngredientModal";
+import EditPantryModal from "../components/EditPantryModal";
 
 
 export default function Pantry() {
+  const [showEditModal, setShowEditModal] = useState(false);
+const [editingItem, setEditingItem] = useState<any>(null);
+
 
   const { householdId, loading: householdLoading } = useHousehold();
   const { data, isLoading, isError } = usePantry();
@@ -122,6 +126,15 @@ export default function Pantry() {
                 >
                   🗑️
                 </button>
+                <button
+                className={styles.deleteBtn}
+                 onClick={() => {
+                 setEditingItem(item);
+                 setShowEditModal(true);
+                  }}
+                 >
+                   ✏️
+                 </button>
 
               </div>
             </div>
@@ -132,6 +145,13 @@ export default function Pantry() {
       {showModal && (
         <AddIngredientModal onClose={() => setShowModal(false)} />
       )}
+      {showEditModal && (
+     <EditPantryModal 
+    item={editingItem}
+    onClose={() => setShowEditModal(false)}
+  />
+)}
+
     </div>
   );
 }

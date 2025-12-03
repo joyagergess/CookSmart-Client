@@ -69,7 +69,7 @@ const [activeExpense, setActiveExpense] = useState<any | null>(null);
                 className={styles.deleteBtn}
                 onClick={() => deleteExpense.mutate(expense.id)}
               >
-                🗑
+              🗑️
               </button>
             </div>
           ))}
