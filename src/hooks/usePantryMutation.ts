@@ -63,7 +63,8 @@ export function usePantryMutations() {
   
 const addItem = useMutation({
   mutationFn: async (data: any) => {
-    return api.post(`/pantry/add_update/${data.id}`, data);
+    const id = data.id ? data.id : "add";  
+    return api.post(`/pantry/add_update/${id}`, data);
   },
   onSuccess: () => {
     queryClient.invalidateQueries({ queryKey: ["pantry", householdId] });
