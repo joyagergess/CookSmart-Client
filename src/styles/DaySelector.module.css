@@ -7,7 +7,7 @@
 .dayBtn {
   padding: 8px 16px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #4c922d;
   background: white;
   cursor: pointer;
   transition: 0.2s;
@@ -15,11 +15,11 @@
 }
 
 .dayBtn:hover {
-  background: #f2f2f2;
+  background: #addd99;
 }
 
 .active {
-  background: #63d963;
+  background: #4c922d;
   color: white;
   border-color: #4fb44f;
   font-weight: 600;

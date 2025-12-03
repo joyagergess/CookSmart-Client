@@ -133,7 +133,8 @@ const [editingItem, setEditingItem] = useState<any>(null);
                  setShowEditModal(true);
                   }}
                  >
-                   ✏️
+                📝
+
                  </button>
 
               </div>
