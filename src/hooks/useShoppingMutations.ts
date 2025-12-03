@@ -6,28 +6,30 @@ export function useShoppingMutations() {
   const qc = useQueryClient();
   const { householdId } = useHousehold();
 
-  const invalidate = () =>
+  const invalidateAll = () => {
     qc.invalidateQueries({ queryKey: ["shopping-list", householdId] });
+    qc.invalidateQueries({ queryKey: ["pantry", householdId] });
+  };
 
   const addItem = useMutation({
     mutationFn: async (item: any) => {
       return api.post("/shopping_list_items/add", item);
     },
-    onSuccess: invalidate,
+    onSuccess: invalidateAll,
   });
 
   const deleteItem = useMutation({
     mutationFn: async (id: number) => {
       return api.post("/shopping_list_items/delete", { id });
     },
-    onSuccess: invalidate,
+    onSuccess: invalidateAll,
   });
 
   const toggleBought = useMutation({
     mutationFn: async (id: number) => {
       return api.post("/shopping_list_items/toggle", { id });
     },
-    onSuccess: invalidate,
+    onSuccess: invalidateAll,
   });
 
   return { addItem, deleteItem, toggleBought };
